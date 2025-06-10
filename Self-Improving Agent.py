@@ -339,9 +339,9 @@ class SelfImprovingAgent:
 def main():
     """Main function to demonstrate the self-improving agent"""
 
-    API_KEY = "AIzaSyAOpktwkXWlWPzRVLJcXoUwvZ6VEyeEy3k"
+    API_KEY = "your-gemini-api-key-here"  # Replace with your actual Gemini API key
 
-    if API_KEY == "AIzaSyAOpktwkXWlWPzRVLJcXoUwvZ6VEyeEy3k":
+    if API_KEY == "your-gemini-api-key-here":
         print("⚠️  Please set your Gemini API key in the API_KEY variable")
         print("Get your API key from: https://makersuite.google.com/app/apikey")
         return
