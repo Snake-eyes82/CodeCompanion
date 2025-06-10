@@ -1,0 +1,6 @@
+PySide6
+markdown
+setuptools
+wheel
+typing
+google.generativeai

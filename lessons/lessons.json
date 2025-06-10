@@ -1,0 +1,108 @@
+[
+    {
+        "title": "Introduction to Python: Hello World!",
+        "filename": "lessons/lesson1.md",
+        "initial_code": "print('Hello, World!')",
+        "exercise_checks": [
+            {
+                "prompt": "Write a Python program that prints 'Hello, World!' to the console.",
+                "initial_code": "print()",
+                "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if output == 'Hello, World!':\n            return True\n        else:\n            return False\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n"
+            }
+        ]
+    },
+    {
+        "title": "Variables and Data Types",
+        "filename": "lessons/lesson2.md",
+        "initial_code": "",
+        "exercise_checks": [
+            {
+                "prompt": "Declare a variable named `my_number` and assign it the integer value `100`.",
+                "initial_code": "",
+                "check_function": "def check_result(user_code, expected_output):\n    try:\n        exec(user_code, globals())\n        if 'my_number' in globals() and isinstance(globals()['my_number'], int) and globals()['my_number'] == 100:\n            return True\n        else:\n            return False\n    except Exception:\n        return False\n"
+            }
+        ]
+    },
+    {
+        "title": "Control Structures: If Statements and Loops",
+        "filename": "lessons/lesson3.md",
+            "initial_code": "",
+            "exercise_checks": [
+                {
+                    "prompt": "Write an if statement. If `num` is greater than 10, print 'Greater'. Set `num = 15` before your if statement.",
+                    "initial_code": "num = 15\n",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if 'Greater' in output:\n            return True\n        else:\n            return False\n    except Exception as e:\n        sys.stdout = old_stdout # Ensure stdout is restored on error\n        return False\n"
+                },
+                {
+                    "prompt": "Use a `for` loop to print numbers from 0 to 2 (inclusive).",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        sys.stdout = old_stdout\n        output = redirected_output.getvalue().strip()\n        if output == '0\\n1\\n2':\n            return True\n        else:\n            return False\n    except Exception as e:\n        sys.stdout = old_stdout # Ensure stdout is restored on error\n        return False\n"
+                }
+            ]
+        },
+        {
+            "title": "Functions and Modules",
+            "filename": "lessons/lesson4.md",
+            "exercise_checks": [
+                {
+                    "prompt": "Define a function called `say_hello` that prints 'Hello!'. Then call the function.",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if output == 'Hello!':\n            return True\n        else:\n            return False\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n"
+                },
+                {
+                    "prompt": "Define a function `add(a, b)` that returns the sum of `a` and `b`. Call `add(7, 3)` and print the result.",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if output == '10':\n            return True\n        else:\n            return False\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n"
+                }
+            ]
+        },
+        {
+            "title": "Data Structures: Lists, Tuples, and Dictionaries",
+            "filename": "lessons/lesson5.md",
+            "exercise_checks": [
+                {
+                    "prompt": "Create a list `fruits` with 'apple', 'banana', 'cherry'. Print the list.",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if output == \"['apple', 'banana', 'cherry']\":\n            return True\n        else:\n            return False\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n"
+                },
+                {
+                    "prompt": "Create a dictionary `person` with keys 'name' (value 'Alice') and 'age' (value 25). Print the dictionary.",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if output == \"{'name': 'Alice', 'age': 25}\" or output == \"{'age': 25, 'name': 'Alice'}\":\n            return True\n        else:\n            return False\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n"
+                }
+            ]
+        },
+        {
+            "title": "File Handling in Python",
+            "filename": "lessons/lesson6.md",
+            "exercise_checks": [
+                {
+                    "prompt": "Write the text 'My first file line!' to a file named `test_file.txt`. Then read and print its content.",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys, os\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        if os.path.exists('test_file.txt'):\n            os.remove('test_file.txt')\n\n        exec(user_code, globals())\n\n        file_content_correct = False\n        if os.path.exists('test_file.txt'):\n            with open('test_file.txt', 'r') as f:\n                file_content = f.read().strip()\n            if file_content == 'My first file line!':\n                file_content_correct = True\n        \n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n\n        if file_content_correct and output == 'My first file line!':\n            return True\n        else:\n            return False\n\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n    finally:\n        if os.path.exists('test_file.txt'):\n            os.remove('test_file.txt')\n"
+                }
+            ]
+        },
+        {
+            "title": "Error Handling and Exceptions",
+            "filename": "lessons/lesson7.md",
+            "exercise_checks": [
+                {
+                    "prompt": "Write a `try-except` block to handle a `ZeroDivisionError`. Try to divide 10 by 0. In the `except` block, print 'Cannot divide by zero!'.",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if output == 'Cannot divide by zero!':\n            return True\n        else:\n            return False\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n"
+                }
+            ]
+        },
+        {
+            "title": "Object-Oriented Programming Basics",
+            "filename": "lessons/lesson8.md",
+            "exercise_checks": [
+                {
+                    "prompt": "Define a class `Car` with an `__init__` method that takes `make` and `model` as parameters and assigns them to instance variables. Create an instance of `Car` with 'Toyota' and 'Camry', then print its `make`.",
+                    "initial_code": "",
+                    "check_function": "def check_result(user_code, expected_output):\n    import io, sys\n    old_stdout = sys.stdout\n    redirected_output = io.StringIO()\n    sys.stdout = redirected_output\n    try:\n        exec(user_code, globals())\n        output = redirected_output.getvalue().strip()\n        sys.stdout = old_stdout\n        if output == 'Toyota':\n            return True\n        else:\n            return False\n    except Exception:\n        sys.stdout = old_stdout\n        return False\n"
+                }
+            ]
+        }
+    ]
