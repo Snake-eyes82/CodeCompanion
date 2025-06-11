@@ -1,8 +1,7 @@
 
-# Control Structures: `Data Structures: Lists, Tuples, and Dictionaries`**
+# Control Structures: Data Structures: Lists, Tuples, and Dictionaries
 
-```markdown
-# Data Structures: Lists, Tuples, and Dictionaries
+## Data Structures: Lists, Tuples, and Dictionaries
 
 Python offers powerful built-in data structures to organize and store collections of data.
 

@@ -1,8 +1,7 @@
 
-# Control Structures: `Error Handling and Exceptions`**
+# Control Structures: Error Handling and Exceptions
 
-```markdown
-# Error Handling and Exceptions
+## Error Handling and Exceptions
 
 Errors happen! In Python, when an error occurs during execution, it's called an **exception**. You can "handle" these exceptions gracefully to prevent your program from crashing.
 

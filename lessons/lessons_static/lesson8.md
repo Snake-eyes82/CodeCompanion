@@ -1,8 +1,7 @@
 
-# Control Structures: `Object-Oriented Programming Basics`
+# Control Structures: Object-Oriented Programming Basics
 
-```markdown
-# Object-Oriented Programming (OOP) Basics
+## Object-Oriented Programming (OOP) Basics
 
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data (attributes) and code (methods).
 
